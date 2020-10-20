@@ -1,0 +1,306 @@
+{
+	"info": {
+		"_postman_id": "3b631c7b-a17d-4092-a6c3-5f973229d3df",
+		"name": "pizza",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:4040/api/auth/register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						},
+						{
+							"key": "fullname",
+							"value": "Hezi H",
+							"type": "text"
+						},
+						{
+							"key": "street",
+							"value": "Beer Sheva",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4040/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4040/api/auth/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "email",
+							"value": "test@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4040/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4040/api/user/update",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W10sIl9pZCI6IjVmOGVmYzY3ZWI2MWQzMjFhMGUxNjAxZSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkhlemkgSCIsInN0cmVldCI6IkJlZXIgU2hldmEiLCJjcmVhdGVkQXQiOiIyMDIwLTEwLTIwVDE1OjA0OjA3LjY5OFoifQ.8E2kiPHPQ7v4nOHkeX5WNlJZTwTtCppn26IJW8x26Is",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "street",
+							"value": "whatever2",
+							"type": "text"
+						},
+						{
+							"key": "fullname",
+							"value": "newstreet",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4040/api/user/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"user",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4040/api/user/add_to_cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W10sIl9pZCI6IjVmOGYwOWUzM2FiNDBiM2JhMDNhMjE4YyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkhlemkgSCIsInN0cmVldCI6IkJlZXIgU2hldmEiLCJjcmVhdGVkQXQiOiIyMDIwLTEwLTIwVDE2OjAxOjM5LjkyN1oifQ.5RqKYEF3AHCiCS57o-Bvq1QB-jsnRTsbiSirVMH_cJA"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "data",
+							"value": "{\"items\":[{\"product\":\"Carbonara\",\"quantity\":1}]}",
+							"type": "text"
+						},
+						{
+							"key": "cart_id",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:4040/api/user/add_to_cart",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"user",
+						"add_to_cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4040/api/user/send_email",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W10sIl9pZCI6IjVmOGYwOWUzM2FiNDBiM2JhMDNhMjE4YyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkhlemkgSCIsInN0cmVldCI6IkJlZXIgU2hldmEiLCJjcmVhdGVkQXQiOiIyMDIwLTEwLTIwVDE2OjAxOjM5LjkyN1oifQ.5RqKYEF3AHCiCS57o-Bvq1QB-jsnRTsbiSirVMH_cJA"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4040/api/user/send_email",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"user",
+						"send_email"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4040/api/user/get_menu_items",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W10sIl9pZCI6IjVmOGYwOWUzM2FiNDBiM2JhMDNhMjE4YyIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkhlemkgSCIsInN0cmVldCI6IkJlZXIgU2hldmEiLCJjcmVhdGVkQXQiOiIyMDIwLTEwLTIwVDE2OjAxOjM5LjkyN1oifQ.5RqKYEF3AHCiCS57o-Bvq1QB-jsnRTsbiSirVMH_cJA"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4040/api/user/get_menu_items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"user",
+						"get_menu_items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:4040/api/user/delete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/x-www-form-urlencoded"
+					},
+					{
+						"key": "Authorization",
+						"type": "text",
+						"value": "bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W10sIl9pZCI6IjVmOGYwODc2ZjFjNGUyNmI5MDc3M2ExMSIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJmdWxsbmFtZSI6IkhlemkgSCIsInN0cmVldCI6IkJlZXIgU2hldmEiLCJjcmVhdGVkQXQiOiIyMDIwLTEwLTIwVDE1OjU1OjM0LjAzOVoifQ.skw8cTm5YhsTK4KyWT6l35X0jxJlfJphGuGyoaLt4q0"
+					}
+				],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:4040/api/user/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4040",
+					"path": [
+						"api",
+						"user",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
