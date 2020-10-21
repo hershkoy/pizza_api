@@ -1,0 +1,16 @@
+{
+  "swaggerDefinition": {
+      "swagger": "2.0",
+      "info": {
+        "version": "1.0.0",
+        "title": "Pizza Delivery API",
+        "description": "Pizza Delivery API",
+        "license": {
+          "name": "MIT",
+          "url": "https://opensource.org/licenses/MIT"
+        }
+      },
+      "servers": ["localhost:4040"]
+    },
+    "apis": ["server/routes/*.js"]
+}

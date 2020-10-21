@@ -4,10 +4,11 @@ const httpError = require('http-errors');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-// const compress = require('compression');
-// const methodOverride = require('method-override');
-// const swaggerUi = require('swagger-ui-express');
-// const swaggerDocument = require('./swagger.json');
+const swaggerJsDoc = require('swagger-jsdoc');
+const swaggerUi = require('swagger-ui-express');
+const swaggerOptions = require('./swagger.json');
+
+
 const passport = require('./passport')
 const cors = require('cors');
 const helmet = require('helmet');
@@ -25,19 +26,11 @@ app.use(/^((?!(api)).)*/, (req, res) => {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 
- //React server
-// app.use(express.static(path.join(__dirname, '../../node_modules/material-dashboard-react/dist')))
-// app.use(/^((?!(api)).)*/, (req, res) => {
-// res.sendFile(path.join(__dirname, '../../dist/index.html'));
-// }); 
-
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cookieParser());
-//app.use(compress());
-//app.use(methodOverride());
 
 // secure apps by setting various HTTP headers
 app.use(helmet());
@@ -47,7 +40,9 @@ app.use(cors());
 
 app.use(passport.initialize());
 
-//app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+const swaggerDocs = swaggerJsDoc(swaggerOptions);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
+//app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(mySwaggerDoc));
 
 // API router
 app.use('/api/', routes);
